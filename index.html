@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Lite Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <h1 class="logo">Aurora <span>Lite</span></h1>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="hero"
+        class="hero reveal"
+        style="
+          background-image: url(images/hero.jpg);
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <h2>Hi, I'm Aurora</h2>
+        <p>I build clean, responsive websites using HTML & CSS.</p>
+        <a href="#projects" class="btn">View Work</a>
+      </section>
+
+      <section id="about" class="section reveal">
+        <div class="container">
+          <div>
+            <h2>About Me</h2>
+            <p>
+              I'm a self-taught web developer passionate about creating modern
+              and responsive websites. I enjoy turning ideas into real digital
+              experiences.
+            </p>
+          </div>
+          <img src="images/About.jpg" />
+        </div>
+      </section>
+
+      <section id="projects" class="section alt reveal">
+        <h2 class="center">Projects</h2>
+        <div class="projects-grid">
+          <div class="card">
+            <img src="images/project1.jpeg" />
+            <h3>Portfolio UI</h3>
+            <p>Modern UI design, fully responsive portfolio UI</p>
+          </div>
+          <div class="card">
+            <img src="images/project2.jpeg" />
+            <h3>E-commerce Landing Page</h3>
+            <p>Built with HTML & CSS, fully responsive design.</p>
+          </div>
+          <div class="card">
+            <img src="images/Project3.jpeg" />
+            <h3>SaaS Landing Page</h3>
+            <p>Built with HTML & CSS, fully responsive landing page</p></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <h2 class="center">Contact Me</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message"></textarea>
+          <button>Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer"><p>© 2026 Aurora Lite. All rights reserved </p></footer>
+    <script>
+      /* MOBILE MENU */ const toggle = document.getElementById("menuToggle");
+      const nav = document.getElementById("navLinks");
+      toggle.onclick = () => {
+        nav.classList.toggle("active");
+      };
+      /* SCROLL REVEAL */ const reveals = document.querySelectorAll(".reveal");
+      window.addEventListener("scroll", () => {
+        reveals.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            el.classList.add("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
